@@ -1,182 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAT Cargo VAD LLC</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 20px;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero-text {
-            max-width: 500px;
-            padding: 20px;
-            animation: slideInLeft 1.5s ease;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            animation: slideInRight 1.5s ease;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .contact {
-            background: #e9e9e9;
-            padding: 60px 20px;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NORTHERN LIGHTS CAB INC.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #121b25;
+      color: #fff;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+    header {
+      background: url('https://images.unsplash.com/photo-1601132321476-1d3c9691b6f1?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 100px 20px 60px;
+      text-align: center;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 42px;
+      color: #00bcd4;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #e0f7fa;
+    }
+
+    nav {
+      background-color: #0a131f;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .hero {
+      background-color: #f0f0f0;
+      color: #222;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      color: #0277bd;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #00bcd4;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .box {
+      background-color: #1e2a36;
+      padding: 20px;
+      border-left: 5px solid #00bcd4;
+      border-radius: 8px;
+    }
+
+    .box h3 {
+      color: #4dd0e1;
+      margin-bottom: 10px;
+    }
+
+    form {
+      background-color: #1e2a36;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    form button {
+      background-color: #00bcd4;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: #0a131f;
+      color: #ccc;
+      padding: 30px;
+      text-align: center;
+    }
+
+    a {
+      color: #4dd0e1;
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">PAT Cargo VAD LLC</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <header>
+    <h1>NORTHERN LIGHTS CAB INC.</h1>
+    <p>Professional Cab Services in East Boston, MA</p>
+  </header>
 
-    <div class="hero" id="home">
-        <div class="hero-text">
-            <h1>PAT Cargo VAD LLC</h1>
-            <p>Your trusted partner in transportation and warehousing. We provide reliable cargo services and storage solutions to meet your business needs with efficiency and care.</p>
-        </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Cargo Services">
-        </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>🚕 Safe. Reliable. Always On Time.</h2>
+    <p>We're ready to take you where you need to go — 24/7 in East Boston and beyond.</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <div class="box">
+      <p>Founded in 2023, NORTHERN LIGHTS CAB INC. is a Massachusetts-based transportation company led by Victor S. Traskin. We are committed to delivering dependable and professional rides throughout East Boston and the surrounding areas.</p>
     </div>
+  </section>
 
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>PAT Cargo VAD LLC is a Domestic LLC based in Arizona, offering specialized services in transportation and warehousing. With a focus on reliability and customer satisfaction, we have been serving businesses since 2021.</p>
-        <p><strong>Registered Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>🚖 Local Rides</h3>
+        <p>Quick trips across town with friendly drivers.</p>
+      </div>
+      <div class="box">
+        <h3>🛬 Airport Transfers</h3>
+        <p>Timely pickups and drop-offs to Logan and regional airports.</p>
+      </div>
+      <div class="box">
+        <h3>🩺 Medical Appointments</h3>
+        <p>Non-emergency transport to clinics and hospitals.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="section contact" id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:contact@patcargovadllc.click">contact@patcargovadllc.click</a></p>
-        <p><strong>Agent Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+  <section class="section" id="booking">
+    <h2>Book a Ride</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="text" placeholder="Pick-up Location" required />
+      <input type="text" placeholder="Drop-off Location" required />
+      <input type="datetime-local" required />
+      <textarea placeholder="Additional Notes" rows="4"></textarea>
+      <button type="submit">Send Booking Request</button>
+    </form>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <div class="box">
+      <p><strong>Address:</strong> 50 Meridian Street, Unit 263, East Boston, MA 02128</p>
+      <p><strong>Email:</strong> <a href="mailto:traskin@northerncab.in.net">traskin@northerncab.in.net</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+15808656155">(580) 865-6155</a></p>
     </div>
+    <iframe 
+      src="https://www.google.com/maps?q=50+MERIDIAN+STREET,+UNIT+263,+East+Boston,+MA+02128&output=embed" 
+      allowfullscreen 
+      loading="lazy">
+    </iframe>
+  </section>
 
-    <footer>
-        &copy; 2025 PAT Cargo VAD LLC. All rights reserved.
-    </footer>
+  <footer>
+    <p>&copy; 2025 NORTHERN LIGHTS CAB INC. All rights reserved.</p>
+  </footer>
 
-    <script>
-        // Intersection Observer for fade-in effect
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+  <!-- Start of Tawk.to Script -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/660b531ba0c6737bd126b1d1/1hql13ajq';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!-- End of Tawk.to Script -->
 
 </body>
 </html>
